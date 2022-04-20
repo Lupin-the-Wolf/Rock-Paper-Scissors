@@ -54,22 +54,59 @@ else if ( answer === 'paper'){
 }
 }
 
-let playerSelection = prompt('What do you pick?',) .toLowerCase();
+let playerAnswer = prompt('What do you pick?',) .toLowerCase();
 
 function playerPick(){
- }  playerPick = playerSelection ;{
-        if (playerPick == 'rock'){
-        alert ('rock')
+ }  playerPick = playerAnswer ;{
+        if (playerPick === 'rock'){
+        playerSelection = 'rock'
 
-        }else if (playerPick == 'paper'){
-        alert ('paper')
+        }else if (playerPick === 'paper'){
+        playerSelection = 'paper'
 
-        } else {
-        alert ('scissors')
-        }
+        } else if (playerPick === 'scissors') {
+        playerSelection = 'scissors'
+        
+        }else{
+        playerSelection = 'Invalid response'
+        } 
 
 }
 
+console.log (playerSelection)
+console.log (computerSelection)
+
+function RPS(){
+}
+    {
+    if (playerSelection === 'scissors' && computerSelection === 'paper'){
+        alert ('Player wins!!')
+    
+    }else if (playerSelection === 'rock' && computerSelection === 'scissors'){
+        alert ('Player wins!!')
+
+    }else if (playerSelection === 'paper' && computerSelection === 'rock'){ 
+        alert ('Player wins!!')
+
+    }else if (playerSelection === 'scissors' && computerSelection === 'rock'){
+        alert ('Computer wins!!')
+
+    }else if (playerSelection === 'paper' && computerSelection === 'scissors'){
+        alert ('Computer wins!!')
+    
+    }else if (playerSelection === 'rock' && computerSelection === 'paper'){
+        alert ('Computer wins!!')
+
+    }else if (playerSelection === 'scissors' && computerSelection === 'scissors'){
+        alert ('Its a draw!!')
+
+    }else if (playerSelection === 'paper' && computerSelection === 'paper'){
+        alert ('Its a draw!!')
+    
+    }else if (playerSelection === 'rock' && computerSelection === 'rock'){
+        alert ('Its a draw!!')
+    }
+}
 </script>
 </html>
 
