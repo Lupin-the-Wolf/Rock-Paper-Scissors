@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+function  computerPlay(){
+    let RanNum = Math.floor(Math.random()* (3 - 1 + 1) + 1)
+    if (RanNum=== 1){
+        return 'rock'
+    
+    } else if (RanNum === 2){
+        return 'paper'
+    } else {
+        return 'scissors'
+    }
+    }
+
+function RPS(){
+        
+    if (playerAnswer === 'scissors' && compSelection === 'paper'){
+        return 'Player wins!!';  
+        
+    } else if (playerAnswer === 'rock' && compSelection === 'scissors'){
+        return 'Player wins!!';
+
+    }else if (playerAnswer === 'paper' && compSelection === 'rock'){ 
+        return'Player wins!!';
+
+    }else if (playerAnswer === 'scissors' && compSelection === 'rock'){
+        return 'Computer wins!!';
+
+    }else if (playerAnswer === 'paper' && compSelection === 'scissors'){
+        return 'Computer wins!!';
+    
+    }else if (playerAnswer === 'rock' && compSelection === 'paper'){
+        return 'Computer wins!!';
+
+    }else if (playerAnswer === 'scissors' && compSelection === 'scissors'){
+        return 'Its a draw!!';
+
+    }else if (playerAnswer === 'paper' && compSelection === 'paper'){
+        return 'Its a draw!!';
+    
+    }else if (playerAnswer === 'rock' && compSelection === 'rock'){
+        return 'Its a draw!!';
+    }
+}
+
+function RPSLoop(){
+    for (let i = 0; i < 5; i++){
+        playerAnswer= prompt('What do you pick?',) .toLowerCase();
+        
+        compSelection = computerPlay();
+        
+        RPS();
+        
+        alert (RPS())
+        
+        console.log(RPS());
+    
+        
+    }
+}
+
+RPSLoop();
+
+
+//Old Code
+
+// function  RanNum(min, max){
+//     return Math.floor(Math.random()* (max - min + 1) + min)
+// }
+// console.log (RanNum(1,3))
+// let computerPlay = RanNum (1, 3);{
+
+// if (computerPlay === 1){
+//     answer = 'rock';
+
+// }else if(computerPlay === 2){
+//     answer = 'paper';
+
+// }else {
+//     answer = 'scissors';
+// }
+// }
+
+// function computerPick()
+// {
+
+//     if ( answer === 'rock'){
+//     return 'rock';
+    
+//     }else if ( answer === 'paper'){
+//     return 'paper';
+
+//     } else{
+//     return 'scissors';
+// }
+// }
+// let computerAnswer = computerPick();
+// console.log (computerAnswer)
+// let playerAnswer = prompt('What do you pick?',) .toLowerCase();
+
+// //function playerPick(){
+//  //}  playerPick = playerAnswer ;{
+// //
+//   //  if (playerPick === 'rock'){
+// //playerSelection = 'rock'
+
+//   //  }else if (playerPick === 'paper'){
+// //playerSelection = 'paper'
+
+//   //  } else if (playerPick === 'scissors') {
+// //playerSelection = 'scissors'
+
+//   //  }else{
+// //playerSelection = 'Invalid response'
+// //} 
+
+// //}
+
+// console.log (playerAnswer)
+// console.log (computerPick())
+
+// function RPS(playerAnswer, computerPick){
+//     if (playerAnswer === 'scissors' && computerPick === 'paper'){
+//         return 'Player wins!!';  
+    
+//     } else if (playerAnswer === 'rock' && computerPick === 'scissors'){
+//         return 'Player wins!!';
+
+//     }else if (playerAnswer === 'paper' && computerPick === 'rock'){ 
+//         return'Player wins!!';
+
+//     }else if (playerAnswer === 'scissors' && computerPick === 'rock'){
+//         return 'Computer wins!!';
+
+//     }else if (playerAnswer === 'paper' && computerPick === 'scissors'){
+//         return 'Computer wins!!';
+    
+//     }else if (playerAnswer === 'rock' && computerPick === 'paper'){
+//         return 'Computer wins!!';
+
+//     }else if (playerAnswer === 'scissors' && computerPick === 'scissors'){
+//         return 'Its a draw!!';
+
+//     }else if (playerAnswer === 'paper' && computerPick === 'paper'){
+//         return 'Its a draw!!';
+    
+//     }else if (playerAnswer === 'rock' && computerPick === 'rock'){
+//         return 'Its a draw!!';
+//     }
+// }
+
+// console.log (RPS(playerAnswer, computerPick()));
+
+//     function RPSLoop(){
+//     for (let i = 0; i < 5; i++){
+//         playerAnswer= prompt('What do you pick?',) .toLowerCase();
+        
+//         RPS(playerAnswer, computerAnswer);
+//         console.log(RPS(playerAnswer, computerAnswer));
+//     }
+//     }
+
+
+// console.log (RPSLoop())
+</script>
+</html>
+
