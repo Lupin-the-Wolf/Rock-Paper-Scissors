@@ -16,7 +16,6 @@ function  computerPlay(){
     let RanNum = Math.floor(Math.random()* (3 - 1 + 1) + 1)
     if (RanNum=== 1){
         return 'rock'
-    
     } else if (RanNum === 2){
         return 'paper'
     } else {
@@ -24,10 +23,11 @@ function  computerPlay(){
     }
     }
 
+
 function RPS(){
-        
+    
     if (playerAnswer === 'scissors' && compSelection === 'paper'){
-        return 'Player wins!!';  
+        return 'Player wins!!'; 
         
     } else if (playerAnswer === 'rock' && compSelection === 'scissors'){
         return 'Player wins!!';
@@ -55,6 +55,10 @@ function RPS(){
     }
 }
 
+let playerScore=0;
+
+let computerScore=0;
+
 function RPSLoop(){
     for (let i = 0; i < 5; i++){
         playerAnswer= prompt('What do you pick?',) .toLowerCase();
@@ -64,8 +68,16 @@ function RPSLoop(){
         RPS();
         
         alert (RPS())
+       
+        if(RPS() === 'Player wins!!'){
+            playerScore++;
+        }else if (RPS() ==='Computer wins!!'){
+            computerScore++;
+        }   
         
         console.log(RPS());
+        console.log(playerScore);
+        console.log(computerScore);
     
         
     }
