@@ -4,15 +4,123 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
-    
+    <div id = 'RPS' class ="RPS">
+        <button class = 'rock' value = 'rock' > Rock </button>
+        <button class = 'paper' value = 'paper'> Paper </button>
+        <button class = 'scissors' value = 'scissors'> Scissors </button>
+        
+    </div>
+    <div id = 'gameInfo' class = 'gameBox'>
+        <p id = 'compScoreInfo' class = 'computerScore'> Computer Score is </p>
+        <p class = 'roundsLeft'> First to 5 Wins! </p>
+        <p id = 'userScoreInfo'class = 'userScore'> User Score </p>
+    </div> 
+
 </body>
 
 <script>
 
-function  computerPlay(){
+
+let playerScore=0;
+
+let computerScore=0;
+
+function playEnd(){if (playerScore === 5){
+        alert('You Win!!!!!')
+    }
+
+    else if (computerScore === 5){
+        alert('You Lose!')
+    }
+    else {
+        return
+    }
+}
+
+document.getElementById('RPS').addEventListener('click', event => {
+    
+    if (event.target.className === 'rock'){
+        playerAnswer = 'rock';
+    }
+    else if (event.target.className === 'paper'){
+        playerAnswer = 'paper';
+    }
+    else if (event.target.className === 'scissors'){
+        playerAnswer = 'scissors'
+    }
+    compSelection = computerPlay();
+    RPS();
+    
+    if(RPS() === 'Player wins!!'){
+            playerScore++;
+        }else if (RPS() ==='Computer wins!!'){
+            computerScore++;
+        }
+    
+    console.log(RPS())
+    console.log (playerScore);
+    
+    document.getElementById('compScoreInfo').innerHTML = `The Computer's Score is ${computerScore}`;
+    document.getElementById('userScoreInfo').innerHTML = `The User's Score is ${playerScore}`;
+    playEnd();
+});
+
+document.getElementById('compScoreInfo').innerHTML = `The Computer's Score is ${computerScore}`;
+document.getElementById('userScoreInfo').innerHTML = `The User's Score is ${playerScore}`;
+
+
+
+
+
+
+// const rockAction = document.querySelector('.rock');
+// rockAction.addEventListener('click', ()=>{
+//     playerAnswer = 'rock';
+//     compSelection = computerPlay();
+//     RPS();
+//     if(RPS() === 'Player wins!!'){
+//             playerScore++;
+//         }else if (RPS() ==='Computer wins!!'){
+//             computerScore++;
+//         }
+//     console.log(RPS())
+//     console.log(playerScore);
+//     console.log(computerScore);
+// });
+
+// const paperAction = document.querySelector('.paper');
+// paperAction.addEventListener('click', ()=>{
+//     playerAnswer = 'paper';
+//     compSelection = computerPlay();
+//     RPS();
+//     if(RPS() === 'Player wins!!'){
+//             playerScore++;
+//         }else if (RPS() ==='Computer wins!!'){
+//             computerScore++;
+//         }
+//     console.log(RPS())
+// });
+
+// const scissorsAction = document.querySelector('.scissors');
+// scissorsAction.addEventListener('click', ()=>{
+//     playerAnswer = 'scissors';
+//     compSelection = computerPlay();
+//     RPS();
+//     if(RPS() === 'Player wins!!'){
+//             playerScore++;
+//         }else if (RPS() ==='Computer wins!!'){
+//             computerScore++;
+//         }
+//     console.log(RPS())
+// });
+
+
+
+function computerPlay(){
     let RanNum = Math.floor(Math.random()* (3 - 1 + 1) + 1)
     if (RanNum=== 1){
         return 'rock'
@@ -55,35 +163,35 @@ function RPS(){
     }
 }
 
-let playerScore=0;
+// let playerScore=0;
 
-let computerScore=0;
+// let computerScore=0;
 
-function RPSLoop(){
-    for (let i = 0; i < 5; i++){
-        playerAnswer= prompt('What do you pick?',) .toLowerCase();
+// function RPSLoop(){
+//     for (let i = 0; i < 5; i++){
+//         playerAnswer= prompt('What do you pick?',) .toLowerCase();
         
-        compSelection = computerPlay();
+//         compSelection = computerPlay();
         
-        RPS();
+//         RPS();
         
-        alert (RPS())
+//         alert (RPS())
        
-        if(RPS() === 'Player wins!!'){
-            playerScore++;
-        }else if (RPS() ==='Computer wins!!'){
-            computerScore++;
-        }   
+//         if(RPS() === 'Player wins!!'){
+//             playerScore++;
+//         }else if (RPS() ==='Computer wins!!'){
+//             computerScore++;
+//         }   
         
-        console.log(RPS());
-        console.log(playerScore);
-        console.log(computerScore);
+//         console.log(RPS());
+//         console.log(playerScore);
+//         console.log(computerScore);
     
         
-    }
-}
+//     }
+// }
 
-RPSLoop();
+// RPSLoop();
 
 </script>
 </html>
