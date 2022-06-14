@@ -42,7 +42,6 @@ function playEnd(){if (playerScore === 5){
 }
 
 document.getElementById('RPS').addEventListener('click', event => {
-    
     if (event.target.className === 'rock'){
         playerAnswer = 'rock';
     }
@@ -59,6 +58,8 @@ document.getElementById('RPS').addEventListener('click', event => {
             playerScore++;
         }else if (RPS() ==='Computer wins!!'){
             computerScore++;
+        }else{
+            alert('Its a draw!')
         }
     
     console.log(RPS())
@@ -71,54 +72,6 @@ document.getElementById('RPS').addEventListener('click', event => {
 
 document.getElementById('compScoreInfo').innerHTML = `The Computer's Score is ${computerScore}`;
 document.getElementById('userScoreInfo').innerHTML = `The User's Score is ${playerScore}`;
-
-
-
-
-
-
-// const rockAction = document.querySelector('.rock');
-// rockAction.addEventListener('click', ()=>{
-//     playerAnswer = 'rock';
-//     compSelection = computerPlay();
-//     RPS();
-//     if(RPS() === 'Player wins!!'){
-//             playerScore++;
-//         }else if (RPS() ==='Computer wins!!'){
-//             computerScore++;
-//         }
-//     console.log(RPS())
-//     console.log(playerScore);
-//     console.log(computerScore);
-// });
-
-// const paperAction = document.querySelector('.paper');
-// paperAction.addEventListener('click', ()=>{
-//     playerAnswer = 'paper';
-//     compSelection = computerPlay();
-//     RPS();
-//     if(RPS() === 'Player wins!!'){
-//             playerScore++;
-//         }else if (RPS() ==='Computer wins!!'){
-//             computerScore++;
-//         }
-//     console.log(RPS())
-// });
-
-// const scissorsAction = document.querySelector('.scissors');
-// scissorsAction.addEventListener('click', ()=>{
-//     playerAnswer = 'scissors';
-//     compSelection = computerPlay();
-//     RPS();
-//     if(RPS() === 'Player wins!!'){
-//             playerScore++;
-//         }else if (RPS() ==='Computer wins!!'){
-//             computerScore++;
-//         }
-//     console.log(RPS())
-// });
-
-
 
 function computerPlay(){
     let RanNum = Math.floor(Math.random()* (3 - 1 + 1) + 1)
