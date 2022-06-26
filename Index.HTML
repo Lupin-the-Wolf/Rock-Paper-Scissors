@@ -8,17 +8,24 @@
     <title>Document</title>
 </head>
 <body>
-    <div id = 'RPS' class ="RPS">
-        <button class = 'rock' value = 'rock' > Rock </button>
-        <button class = 'paper' value = 'paper'> Paper </button>
-        <button class = 'scissors' value = 'scissors'> Scissors </button>
-        
+
+    <div id = 'welcome' class = 'welcome';>
+        <h3 class = 'welcomeHeader'>Welcome to Rock Paper Scissors!</h3>
+        <p class = 'welcomeSub'>Prepare to fight and chose your weapon!</p>
     </div>
-    <div id = 'gameInfo' class = 'gameBox'>
-        <p id = 'compScoreInfo' class = 'computerScore'> Computer Score is </p>
-        <p class = 'roundsLeft'> First to 5 Wins! </p>
-        <p id = 'userScoreInfo'class = 'userScore'> User Score </p>
-    </div> 
+    <div class = 'container'>
+        <div id = 'RPS' class = 'RPS'>
+            <button class = 'rock' value = 'rock' > Rock </button>
+            <button class = 'paper' value = 'paper'> Paper </button>
+            <button class = 'scissors' value = 'scissors'> Scissors </button>
+            
+        </div>
+        <div id = 'gameBox' class = 'gameBox'>
+            <p id = 'compScoreInfo' class = 'computerScore'> Computer Score is </p>
+            <p id = 'gameWinnerInfo' class = 'gameWinnerInfo' > First to 5 Wins! </p>
+            <p id = 'userScoreInfo'class = 'userScore'> User Score </p>
+        </div> 
+    </div>
 
 </body>
 
@@ -52,26 +59,30 @@ document.getElementById('RPS').addEventListener('click', event => {
         playerAnswer = 'scissors'
     }
     compSelection = computerPlay();
-    RPS();
+    
+   RPS();
     
     if(RPS() === 'Player wins!!'){
             playerScore++;
+            updateMessage = 'Awesome! You Won!'
         }else if (RPS() ==='Computer wins!!'){
             computerScore++;
+            updateMessage = 'Awh brother... The computer won!'
         }else{
-            alert('Its a draw!')
+            updateMessage = 'Try again! Its a draw.'
         }
-    
+
     console.log(RPS())
     console.log (playerScore);
     
+   
     document.getElementById('compScoreInfo').innerHTML = `The Computer's Score is ${computerScore}`;
     document.getElementById('userScoreInfo').innerHTML = `The User's Score is ${playerScore}`;
+    document.getElementById('gameWinnerInfo').innerHTML = `${updateMessage}`;
     playEnd();
 });
 
-document.getElementById('compScoreInfo').innerHTML = `The Computer's Score is ${computerScore}`;
-document.getElementById('userScoreInfo').innerHTML = `The User's Score is ${playerScore}`;
+
 
 function computerPlay(){
     let RanNum = Math.floor(Math.random()* (3 - 1 + 1) + 1)
@@ -83,6 +94,7 @@ function computerPlay(){
         return 'scissors'
     }
     }
+
 
 
 function RPS(){

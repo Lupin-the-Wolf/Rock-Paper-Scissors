@@ -15,10 +15,8 @@
 function  RanNum(min, max){
     return Math.floor(Math.random()* (max - min + 1) + min)
 }
-
-function computerPlay(){
-
-}  computerPlay= RanNum(1, 3);
+console.log (RanNum(1,3))
+let computerPlay = RanNum (1, 3);{
 
 if (computerPlay === 1){
     answer = 'rock';
@@ -29,74 +27,89 @@ if (computerPlay === 1){
 }else {
     answer = 'scissors';
 }
-
-function computerPick(){
-}  computerPick = computerPlay;{
-
-if ( answer === 'rock'){
-    computerSelection = 'rock'
-}
-else if ( answer === 'paper'){
-    computerSelection = 'paper'
-
-} else{
-    computerSelection = 'scissors'
-}
 }
 
+function computerPick()
+{
+
+    if ( answer === 'rock'){
+    return 'rock';
+    
+    }else if ( answer === 'paper'){
+    return 'paper';
+
+    } else{
+    return 'scissors';
+}
+}
+let computerAnswer = computerPick();
+console.log (computerAnswer)
 let playerAnswer = prompt('What do you pick?',) .toLowerCase();
 
-function playerPick(){
- }  playerPick = playerAnswer ;{
-        if (playerPick === 'rock'){
-        playerSelection = 'rock'
+//function playerPick(){
+ //}  playerPick = playerAnswer ;{
+//
+  //  if (playerPick === 'rock'){
+//playerSelection = 'rock'
 
-        }else if (playerPick === 'paper'){
-        playerSelection = 'paper'
+  //  }else if (playerPick === 'paper'){
+//playerSelection = 'paper'
 
-        } else if (playerPick === 'scissors') {
-        playerSelection = 'scissors'
-        
-        }else{
-        playerSelection = 'Invalid response'
-        } 
+  //  } else if (playerPick === 'scissors') {
+//playerSelection = 'scissors'
 
-}
+  //  }else{
+//playerSelection = 'Invalid response'
+//} 
 
-console.log (playerSelection)
-console.log (computerSelection)
+//}
 
-function RPS(){
-}
-    {
-    if (playerSelection === 'scissors' && computerSelection === 'paper'){
-        alert ('Player wins!!')
+console.log (playerAnswer)
+console.log (computerPick())
+
+function RPS(playerAnswer, computerPick){
+    if (playerAnswer === 'scissors' && computerPick === 'paper'){
+        return 'Player wins!!';  
     
-    }else if (playerSelection === 'rock' && computerSelection === 'scissors'){
-        alert ('Player wins!!')
+    } else if (playerAnswer === 'rock' && computerPick === 'scissors'){
+        return 'Player wins!!';
 
-    }else if (playerSelection === 'paper' && computerSelection === 'rock'){ 
-        alert ('Player wins!!')
+    }else if (playerAnswer === 'paper' && computerPick === 'rock'){ 
+        return'Player wins!!';
 
-    }else if (playerSelection === 'scissors' && computerSelection === 'rock'){
-        alert ('Computer wins!!')
+    }else if (playerAnswer === 'scissors' && computerPick === 'rock'){
+        return 'Computer wins!!';
 
-    }else if (playerSelection === 'paper' && computerSelection === 'scissors'){
-        alert ('Computer wins!!')
+    }else if (playerAnswer === 'paper' && computerPick === 'scissors'){
+        return 'Computer wins!!';
     
-    }else if (playerSelection === 'rock' && computerSelection === 'paper'){
-        alert ('Computer wins!!')
+    }else if (playerAnswer === 'rock' && computerPick === 'paper'){
+        return 'Computer wins!!';
 
-    }else if (playerSelection === 'scissors' && computerSelection === 'scissors'){
-        alert ('Its a draw!!')
+    }else if (playerAnswer === 'scissors' && computerPick === 'scissors'){
+        return 'Its a draw!!';
 
-    }else if (playerSelection === 'paper' && computerSelection === 'paper'){
-        alert ('Its a draw!!')
+    }else if (playerAnswer === 'paper' && computerPick === 'paper'){
+        return 'Its a draw!!';
     
-    }else if (playerSelection === 'rock' && computerSelection === 'rock'){
-        alert ('Its a draw!!')
+    }else if (playerAnswer === 'rock' && computerPick === 'rock'){
+        return 'Its a draw!!';
     }
 }
+
+console.log (RPS(playerAnswer, computerPick()));
+
+    function RPSLoop(){
+    for (let i = 0; i < 5; i++){
+        playerAnswer= prompt('What do you pick?',) .toLowerCase();
+        
+        RPS(playerAnswer, computerAnswer);
+        console.log(RPS(playerAnswer, computerAnswer));
+    }
+    }
+
+
+console.log (RPSLoop())
 </script>
 </html>
 
