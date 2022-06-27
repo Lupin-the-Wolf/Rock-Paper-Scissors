@@ -11,20 +11,24 @@
 
     <div id = 'welcome' class = 'welcome';>
         <h3 class = 'welcomeHeader'>Welcome to Rock Paper Scissors!</h3>
-        <p class = 'welcomeSub'>Prepare to fight and chose your weapon!</p>
+        <p class = 'welcomeSub'>Prepare to fight and choose your weapon!</p>
     </div>
     <div class = 'container'>
-        <div id = 'RPS' class = 'RPS'>
-            <button class = 'rock' value = 'rock' > Rock </button>
-            <button class = 'paper' value = 'paper'> Paper </button>
-            <button class = 'scissors' value = 'scissors'> Scissors </button>
-            
+        <div class = 'gameBoy'>
+            <div id = 'RPS' class = 'RPS'>
+                <button class = 'rock' value = 'rock' > Rock </button>
+                <button class = 'paper' value = 'paper'> Paper </button>
+                <button class = 'scissors' value = 'scissors'> Scissors </button>
+                
+            </div>
+            <div class = 'gameBoyScreen'>
+                <div id = 'gameBox' class = 'gameBox'>
+                    <p id = 'compScoreInfo' class = 'computerScore'> Computer Score </p>
+                    <p id = 'gameWinnerInfo' class = 'gameWinnerInfo' > First to 5 Wins! </p>
+                    <p id = 'userScoreInfo'class = 'userScore'> User Score </p>
+                </div>
+            </div>
         </div>
-        <div id = 'gameBox' class = 'gameBox'>
-            <p id = 'compScoreInfo' class = 'computerScore'> Computer Score is </p>
-            <p id = 'gameWinnerInfo' class = 'gameWinnerInfo' > First to 5 Wins! </p>
-            <p id = 'userScoreInfo'class = 'userScore'> User Score </p>
-        </div> 
     </div>
 
 </body>
@@ -67,7 +71,7 @@ document.getElementById('RPS').addEventListener('click', event => {
             updateMessage = 'Awesome! You Won!'
         }else if (RPS() ==='Computer wins!!'){
             computerScore++;
-            updateMessage = 'Awh brother... The computer won!'
+            updateMessage = 'Awh brother. The computer won!'
         }else{
             updateMessage = 'Try again! Its a draw.'
         }
